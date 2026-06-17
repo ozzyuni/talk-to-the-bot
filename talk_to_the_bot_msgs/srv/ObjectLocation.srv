@@ -1,5 +1,0 @@
-string prompt
----
-geometry_msgs/Pose pose
-string message
-bool success
