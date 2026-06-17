@@ -1,0 +1,5 @@
+string name
+string hint
+string code
+---
+bool result

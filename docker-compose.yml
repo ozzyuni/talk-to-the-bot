@@ -1,0 +1,28 @@
+services:
+  talk_to_the_bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: talk_to_the_bot
+    environment:
+      - PULSE_SERVER=tcp:127.0.0.1:5050
+      - HF_HOME=/talk_to_the_bot_ws/models/
+      - PYTHONUNBUFFERED=1
+    command: /talk_to_the_bot_ws/src/setup_scripts/talk_to_the_bot_full.bash
+    network_mode: host
+    ipc: host
+    pid: host
+    restart: always
+    volumes:
+      - type: volume
+        source: talk_to_the_bot_build
+        target: /talk_to_the_bot_ws
+      - type: bind
+        source: ./src
+        target: /talk_to_the_bot_ws/src
+      - type: bind
+        source: ./models
+        target: /talk_to_the_bot_ws/models
+
+volumes:
+  talk_to_the_bot_build:

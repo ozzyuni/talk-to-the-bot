@@ -1,0 +1,7 @@
+{
+    "engine": "piper",
+    "piper": {
+        "model": "/lmpchat_ws/models/voices/en_GB-northern_english_male-medium.onnx",
+        "legacy": false
+    }
+}
