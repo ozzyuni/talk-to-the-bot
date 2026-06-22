@@ -12,7 +12,7 @@ class SpeechRecognition:
             from ament_index_python.packages import get_package_share_directory
 
             config_path = os.path.join(
-                get_package_share_directory('lmpvc_listener'),
+                get_package_share_directory('talk_to_the_bot_stt'),
                 'listener_config.json'
                 )
         except:
@@ -89,7 +89,7 @@ class SpeechRecognition:
             - Does not remove periods or commas, except at the end of the string
         """
         
-        remove_punctuation = str.maketrans('', '', """!()-[]{};:'"\<>/?@#$%^&*_~""")
+        remove_punctuation = str.maketrans('', '', """!()-[]{};:'"\\<>/?@#$%^&*_~""")
         formatted_transcript = transcript.translate(remove_punctuation).lower()
 
         if formatted_transcript[-1] == '.':

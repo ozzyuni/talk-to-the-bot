@@ -13,7 +13,7 @@ class Talker:
             from ament_index_python.packages import get_package_share_directory
 
             talker_config_path = os.path.join(
-                get_package_share_directory('talk_to_the_bot_ws'),
+                get_package_share_directory('talk_to_the_bot_tts'),
                 'talker_config.json'
             )
         except:

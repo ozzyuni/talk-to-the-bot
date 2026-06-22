@@ -16,7 +16,8 @@ try:
         get_package_share_directory('talk_to_the_bot_stt'),
         'listener_config.json'
     )
-except:
+except Exception as e:
+    print(f"Exception while attemptin to load ROS config: {str(e)}")
     config_path = Path(__file__).with_name('listener_config.json')
 
 config = {}
