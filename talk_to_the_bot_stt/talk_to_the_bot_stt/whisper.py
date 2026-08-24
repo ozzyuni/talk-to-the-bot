@@ -37,7 +37,7 @@ class SpeechRecognition:
             
         elif config['whisper']['device'] == 'cuda':
             if torch.cuda.is_available():
-                attn_implementation = "flash_attention_2"
+                attn_implementation = config['whisper']['attn_implementation']
                 torch_dtype = torch.float16
                 self.device = 'cuda:0'
 

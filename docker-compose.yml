@@ -4,6 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: talk_to_the_bot
+    runtime: nvidia
     environment:
       - PULSE_SERVER=tcp:127.0.0.1:5050
       - HF_HOME=/talk_to_the_bot_ws/models/

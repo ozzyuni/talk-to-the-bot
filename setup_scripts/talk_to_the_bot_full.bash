@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-. ${PWD}/install/setup.bash
-export HF_HOME=$PWD/models/
-echo "NOT IMPLEMENTED YET"
+. ${PWD}/src/setup_scripts/talk_to_the_bot_full.bash
+ros2 launch ${PWD}/src/setup_scripts/talk_the_bot.launch.py

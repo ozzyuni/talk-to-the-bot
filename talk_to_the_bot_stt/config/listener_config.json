@@ -13,8 +13,9 @@
         "multilingual": true,
         "input_language": "en",
         "translate": false,
-        "format": true,
-        "quantization": "none"
+        "format": false,
+        "quantization": "none",
+        "attn_implementation": "flash_attention_3"
     },
     "remote":{
         

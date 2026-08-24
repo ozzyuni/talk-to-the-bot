@@ -74,25 +74,24 @@ RUN . /opt/ros/jazzy/setup.bash && \
 RUN . /opt/ros/jazzy/setup.bash && \
     . /venv/talk_to_the_bot/bin/activate && \
     pip install --no-cache-dir \
-    torch==2.8.0 \
-    torchvision==0.23.0 \
-    torchaudio==2.8.0 \
+    torch==2.11.0 \
+    torchvision==0.26.0 \
+    torchaudio==2.11.0 \
     --index-url https://download.pytorch.org/whl/cu128
     
 # Flash Attention
 RUN . /opt/ros/jazzy/setup.bash && \
     . /venv/talk_to_the_bot/bin/activate && \
-    pip install flash-attn==2.8.3 --no-cache-dir --no-build-isolation
+    pip install flash_attn_3 --find-links https://windreamer.github.io/flash-attention3-wheels/cu128_torch2110
 
 # Hugging Face
 RUN . /opt/ros/jazzy/setup.bash && \
     . /venv/talk_to_the_bot/bin/activate && \
     pip install --no-cache-dir \
-    transformers==4.40.2\
+    transformers==5.15.1\
     accelerate \
     bitsandbytes \
-    pydub \
-    "numpy<2.0"
+    pydub
 
 USER root
 
